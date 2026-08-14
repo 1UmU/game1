@@ -1,0 +1,10 @@
+services:
+  minesweeper:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: minesweeper-web:latest
+    container_name: minesweeper-web
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8088:80"

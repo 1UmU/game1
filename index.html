@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eef1ec" />
+    <meta
+      name="description"
+      content="一款为桌面与手机设计的现代扫雷游戏。"
+    />
+    <title>雷区 | 扫雷</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="雷区首页">
+          <span class="brand-mark" aria-hidden="true"><i data-lucide="bomb"></i></span>
+          <span>
+            <strong>雷区</strong>
+            <small>MINES</small>
+          </span>
+        </a>
+
+        <div class="difficulty" role="group" aria-label="选择难度">
+          <button type="button" data-level="beginner">初级</button>
+          <button type="button" data-level="intermediate">中级</button>
+          <button type="button" data-level="expert">专家</button>
+        </div>
+      </header>
+
+      <section class="game" aria-labelledby="game-status">
+        <div class="scorebar">
+          <div class="metric" title="剩余雷数">
+            <i data-lucide="flag" aria-hidden="true"></i>
+            <span id="mine-count">010</span>
+          </div>
+
+          <button class="restart" id="restart" type="button" aria-label="重新开始" title="重新开始">
+            <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+          </button>
+
+          <div class="metric" title="用时">
+            <i data-lucide="timer" aria-hidden="true"></i>
+            <span id="timer">000</span>
+          </div>
+        </div>
+
+        <div class="status-row">
+          <div>
+            <p id="game-status" aria-live="polite">准备排雷</p>
+            <span id="board-size">9 × 9 · 10 雷</span>
+          </div>
+          <div class="best" title="最佳成绩">
+            <i data-lucide="trophy" aria-hidden="true"></i>
+            <span id="best-time">--</span>
+          </div>
+        </div>
+
+        <div class="board-scroll" id="board-scroll">
+          <div
+            class="board"
+            id="board"
+            role="grid"
+            aria-label="扫雷棋盘"
+          ></div>
+        </div>
+
+        <div class="mode-switch" role="group" aria-label="触屏操作模式">
+          <button type="button" data-mode="reveal" aria-pressed="true" title="翻开格子">
+            <i data-lucide="mouse-pointer-2" aria-hidden="true"></i>
+            <span>翻开</span>
+          </button>
+          <button type="button" data-mode="flag" aria-pressed="false" title="标记地雷">
+            <i data-lucide="flag" aria-hidden="true"></i>
+            <span>插旗</span>
+          </button>
+        </div>
+      </section>
+
+      <footer>
+        <span id="footer-level">初级 · 9 × 9</span>
+        <span>本地记录</span>
+      </footer>
+    </main>
+
+    <div class="celebration" id="celebration" aria-hidden="true"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
